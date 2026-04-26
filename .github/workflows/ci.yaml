@@ -12,8 +12,8 @@ jobs:
  
     with:
       service: "api-gateway"
-      image: "ghcr.io/HospitalManagementSystem-HMS/api-gateway"
-      sonar_key: ${{ secrets.SONAR_KEY }}
+      image: "ghcr.io/HospitalManagementSystem-HMS/user-service"
+      sonar_key: "HospitalManagementSystem-HMS_api-gateway_8d7be679-30a9-4bdb-b1dc-cb4b7ecd0572"
       trigger: ${{ github.event_name }}
  
     secrets: inherit
