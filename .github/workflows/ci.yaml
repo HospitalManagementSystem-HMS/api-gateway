@@ -1,0 +1,19 @@
+name: CI
+ 
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master]
+ 
+jobs:
+  pipeline:
+    uses: HospitalManagementSystem-HMS/Hospital-Management/.github/workflows/backend-template.yaml@dev
+ 
+    with:
+      service: "api-gateway"
+      image: "ghcr.io/HospitalManagementSystem-HMS/api-gateway"
+      sonar_key: ${{ secrets.SONAR_KEY }}
+      trigger: ${{ github.event_name }}
+ 
+    secrets: inherit
